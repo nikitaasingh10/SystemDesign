@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 const {Pool} = pkg;
 
-const pool = new Pool({
+export const pool = new Pool({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
@@ -13,5 +13,3 @@ const pool = new Pool({
     max: 10,
     idleTimeoutMillis: 30000
 });
-
-export default pool;
