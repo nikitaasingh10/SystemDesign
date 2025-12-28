@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node src/server.js"
+    "dev": "node src/server.js",
+    "db:create": "node scripts/create-db.js",
+    "migrate:create": "node-pg-migrate create",
+    "migrate:up": "node-pg-migrate up"
   },
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
     "dotenv": "^17.2.3",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "node-pg-migrate": "^8.0.4",
+    "pg": "^8.16.3"
   }
 }
