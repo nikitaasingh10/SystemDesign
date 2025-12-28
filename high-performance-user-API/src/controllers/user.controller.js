@@ -1,8 +1,14 @@
 import { getUserData } from "../services/user.service.js";
 
+const simulateDelay = async() => {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+};
+
 export const getUser = async (req, res) => {
     const {userId} = req.params;
 
+    await simulateDelay(); // simulate slow DB
+    
     const result = await getUserData(userId);
 
     if (result.status != 200) {
